@@ -1,0 +1,16 @@
+Exercícios para entregar dia 19/03/2018
+
+1- Utilizar a imagem da lena.jpg disponível no site;
+2- Realizar operações aritméticas: 
+   soma 30, subtração 70, multiplicação 1.2 e divisão 4;
+3- Calcular histograma de cada operação aritmética;
+4- Plotar um gráfico para cada uma;
+5- Calcular métricas de qualidade (visto em sala) para cada imagem resultante;
+6- Realizar redimensionamento piramidal por meio de média aritmetica de janela 2x2 pixels (vide slides) para N/2, N/4 e N/8.
+7- Criar ruído gaussiano na lena;
+8- Calcular entropia da lena original e lena com ruído;
+9- Achar diferença entre lena original e lena modificada, criando uma outra imagem binária (preto = 0 e branco = 255) em que branco estão os pixels diferentes entre as "lenas";
+10- Contar quantos objetos conexos existem na nova imagem utilizando vizinhança-4 e vizinhança-8;
+
+
+OBS: Não utilizar funções prontas dos pacotes para realizar as operações e cálculos.
