@@ -1,0 +1,42 @@
+#normal
+python -m nmt.nmt \
+    --src=in --tgt=out \
+    --vocab_prefix=nmt_data2/vocab  \
+    --train_prefix=nmt_data2/train \
+    --dev_prefix=nmt_data2/dev  \
+    --test_prefix=nmt_data2/test \
+    --out_dir=nmt_model \
+    --num_train_steps=12000 \
+    --steps_per_stats=100 \
+    --num_layers=2 \	
+    --num_units=128 \
+    --dropout=0.2 \
+    --metrics=bleu
+
+python -m nmt.nmt \
+    --out_dir=nmt_model \
+    --inference_input_file=inf.txt \
+    --inference_output_file=nmt_model/output_infer
+
+#attencion based
+#train command
+python -m nmt.nmt \
+    --attention=scaled_luong \
+    --src=in --tgt=out \
+    --vocab_prefix=nmt_data/vocab  \
+    --train_prefix=nmt_data/train \
+    --dev_prefix=nmt_data/dev  \
+    --test_prefix=nmt_data/test \
+    --out_dir=nmt_attention_model \
+    --num_train_steps=70000 \
+    --steps_per_stats=100 \
+    --num_layers=4 \
+    --num_units=128 \
+    --dropout=0.2 \
+    --metrics=bleu
+#inference command
+python -m nmt.nmt \
+    --out_dir=nmt_attention_model \
+    --inference_input_file=inf.txt \
+    --inference_output_file=inf_out.txt
+
